@@ -1,0 +1,209 @@
+*** ee15wi23ix ***
+ PA4a grading feedback:
+    char_at_index (30.0/30.0 pts):
+        Test  1: Input string: "CESKFDSUFRBN", shift by 4, find char at index 7
+                 Expected output: N; Actual output: N
+                 SUCCESS: Output is correct
+        Test  2: Input string: "CESKFDSUFRBN", shift by 14, find char at index 4
+                 Expected output: S; Actual output: S
+                 SUCCESS: Output is correct
+        Test  3: Input string: "CESKFDSUFRBN", shift by -5, find char at index 6
+                 Expected output: E; Actual output: E
+                 SUCCESS: Output is correct
+        Test  4: Input string: "CESKFDSUFRBN", shift by -17, find char at index 3
+                 Expected output: B; Actual output: B
+                 SUCCESS: Output is correct
+        Test  5: Input string: "CESKFDSUFRBN", shift by 0, find char at index 8
+                 Expected output: F; Actual output: F
+                 SUCCESS: Output is correct
+        Test  6: Input string: "UNIVERSITYOFCALIFORNIASANDIEGO", shift by 15, find char at index 23
+                 Expected output: T; Actual output: T
+                 SUCCESS: Output is correct
+        Test  7: Input string: "UNIVERSITYOFCALIFORNIASANDIEGO", shift by 70, find char at index 17
+                 Expected output: E; Actual output: E
+                 SUCCESS: Output is correct
+        Test  8: Input string: "UNIVERSITYOFCALIFORNIASANDIEGO", shift by -88, find char at index 29
+                 Expected output: N; Actual output: N
+                 SUCCESS: Output is correct
+        Test  9: Input string: "UNIVERSITYOFCALIFORNIASANDIEGO", shift by -45, find char at index 16
+                 Expected output: N; Actual output: N
+                 SUCCESS: Output is correct
+        Test 10: Input string: "UNIVERSITYOFCALIFORNIASANDIEGO", shift by 0, find char at index 22
+                 Expected output: S; Actual output: S
+                 SUCCESS: Output is correct
+
+    index_of_char (30.0/30.0 pts):
+        Test  1: Input string: "FCBAYERN", shift by 2, find index of 'F'
+                 Expected output: 6; Actual output: 6
+                 SUCCESS: Output is correct
+        Test  2: Input string: "FCBAYERN", shift by 10, find index of 'B'
+                 Expected output: 0; Actual output: 0
+                 SUCCESS: Output is correct
+        Test  3: Input string: "FCBAYERN", shift by -5, find index of 'R'
+                 Expected output: 3; Actual output: 3
+                 SUCCESS: Output is correct
+        Test  4: Input string: "FCBAYERN", shift by -15, find index of 'A'
+                 Expected output: 2; Actual output: 2
+                 SUCCESS: Output is correct
+        Test  5: Input string: "FCBAYERN", shift by 0, find index of 'C'
+                 Expected output: 1; Actual output: 1
+                 SUCCESS: Output is correct
+        Test  6: Input string: "JOURNALS", shift by 3, find index of 'J'
+                 Expected output: 5; Actual output: 5
+                 SUCCESS: Output is correct
+        Test  7: Input string: "JOURNALS", shift by 11, find index of 'S'
+                 Expected output: 4; Actual output: 4
+                 SUCCESS: Output is correct
+        Test  8: Input string: "JOURNALS", shift by -7, find index of 'U'
+                 Expected output: 1; Actual output: 1
+                 SUCCESS: Output is correct
+        Test  9: Input string: "JOURNALS", shift by -20, find index of 'O'
+                 Expected output: 5; Actual output: 5
+                 SUCCESS: Output is correct
+        Test 10: Input string: "JOURNALS", shift by 0, find index of 'N'
+                 Expected output: 4; Actual output: 4
+                 SUCCESS: Output is correct
+
+    cipher_substition (20.0/40.0 pts):
+        Test  1: ENCRYPT: 
+                   Input string:    "INTERNET"
+                   Code string:     "QWERTYUIOPAS DFGHJKLZXCVBNM"
+                   Expected output: "ODLTJDTL"
+                   Actual output:   "ODLTJDTL?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test  2: ENCRYPT: 
+                   Input string:    "RADIOACTIVE"
+                   Code string:     "TLZXGHQWECVBNMYUIOPAS DFRJK"
+                   Expected output: "OTXEYTZAE G"
+                   Actual output:   "OTXEYTZAE G?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test  3: ENCRYPT: 
+                   Input string:    "THE EARTH REVOLVES AROUND THE SUN"
+                   Code string:     "TLBNYUIOPASKXGECWMRJV DFHQZ"
+                   Expected output: "JOYZYTMJOZMY EK YRZTMEVGNZJOYZRVG"
+                   Actual output:   "JOYZYTMJOZMY EK YRZTMEVGNZJOYZRVG?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test  4: ENCRYPT: 
+                   Input string:    "DO NOT RUN WITH SCISSORS"
+                   Code string:     " OPASZXGETLBCWMRDNYKIJVFHQU"
+                   Expected output: "AMUWMKUNIWUVEKGUYPEYYMNY"
+                   Actual output:   "AMUWMKUNIWUVEKGUYPEYYMNY?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test  5: ENCRYPT: 
+                   Input string:    "TRY TO ALWAYS THINK BEFORE YOU ACT AND MAKE GOOD CHOICES"
+                   Code string:     "RDNYOPAMIJV GESFHQUZXBKWTLC"
+                   Expected output: "ZQTCZSCR KRTUCZMIEVCDOPSQOCTSXCRNZCREYCGRVOCASSYCNMSINOU"
+                   Actual output:   "ZQTCZSCR KRTUCZMIEVCDOPSQOCTSXCRNZCREYCGRVOCASSYCNMSINOU?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test  6: ENCRYPT: 
+                   Input string:    "ENTROPY"
+                   Code string:     "QWERTYUIOPAS DFGHJKLZXCVBNM"
+                   Expected output: "TDLJFGB"
+                   Actual output:   "TDLJFGB?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test  7: ENCRYPT: 
+                   Input string:    "C"
+                   Code string:     "TLZXGHQWECVBNMYUIOPASKDFRJ "
+                   Expected output: "Z"
+                   Actual output:   "Z?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test  8: ENCRYPT: 
+                   Input string:    "THERE ARE BILLIONS OF GALAXIES IN THE UNIVERSE"
+                   Code string:     "TLBNYUIOPASZXKECWMRJV DFHQG"
+                   Expected output: "JOYMYGTMYGLPZZPEKRGEUGITZTFPYRGPKGJOYGVKP YMRY"
+                   Actual output:   "JOYMYGTMYGLPZZPEKRGEUGITZTFPYRGPKGJOYGVKP YMRY?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test  9: ENCRYPT: 
+                   Input string:    "ALEA IACTA EST"
+                   Code string:     "OPASZXGETLBCWMRDNYUIJVFHQK "
+                   Expected output: "OCZO TOAIO ZUI"
+                   Actual output:   "OCZO TOAIO ZUI?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 10: ENCRYPT: 
+                   Input string:    "THE ORIGIN OF SPECIES IS A BOOK BY CHARLES DARWIN"
+                   Code string:     "RDNYKPAMIJV GESFHQUZXBCWTLO"
+                   Expected output: "ZMKOSQIAIEOSPOUFKNIKUOIUORODSSVODTONMRQ KUOYRQCIE"
+                   Actual output:   "ZMKOSQIAIEOSPOUFKNIKUOIUORODSSVODTONMRQ KUOYRQCIE?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 11: DECRYPT: 
+                   Input string:    "ODLTJDTL"
+                   Code string:     "QWERTYUIOPAS DFGHJKLZXCVBNM"
+                   Expected output: "INTERNET"
+                   Actual output:   "INTERNET?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 12: DECRYPT: 
+                   Input string:    "OTXEYTZAE G"
+                   Code string:     "TLZXGHQWECVBNMYUIOPAS DFRJK"
+                   Expected output: "RADIOACTIVE"
+                   Actual output:   "RADIOACTIVE?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 13: DECRYPT: 
+                   Input string:    "JOYZYTMJOZMY EK YRZTMEVGNZJOYZRVG"
+                   Code string:     "TLBNYUIOPASKXGECWMRJV DFHQZ"
+                   Expected output: "THE EARTH REVOLVES AROUND THE SUN"
+                   Actual output:   "THE EARTH REVOLVES AROUND THE SUN?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 14: DECRYPT: 
+                   Input string:    "AMUWMKUNIWUVEKGUYPEYYMNY"
+                   Code string:     " OPASZXGETLBCWMRDNYKIJVFHQU"
+                   Expected output: "DO NOT RUN WITH SCISSORS"
+                   Actual output:   "DO NOT RUN WITH SCISSORS?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 15: DECRYPT: 
+                   Input string:    "ZQTCZSCR KRTUCZMIEVCDOPSQOCTSXCRNZCREYCGRVOCASSYCNMSINOU"
+                   Code string:     "RDNYOPAMIJV GESFHQUZXBKWTLC"
+                   Expected output: "TRY TO ALWAYS THINK BEFORE YOU ACT AND MAKE GOOD CHOICES"
+                   Actual output:   "TRY TO ALWAYS THINK BEFORE YOU ACT AND MAKE GOOD CHOICES?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 16: DECRYPT: 
+                   Input string:    "TDLJFGB"
+                   Code string:     "QWERTYUIOPAS DFGHJKLZXCVBNM"
+                   Expected output: "ENTROPY"
+                   Actual output:   "ENTROPY?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 17: DECRYPT: 
+                   Input string:    "Z"
+                   Code string:     "TLZXGHQWECVBNMYUIOPASKDFRJ "
+                   Expected output: "C"
+                   Actual output:   "C?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 18: DECRYPT: 
+                   Input string:    "JOYMYGTMYGLPZZPEKRGEUGITZTFPYRGPKGJOYGVKP YMRY"
+                   Code string:     "TLBNYUIOPASZXKECWMRJV DFHQG"
+                   Expected output: "THERE ARE BILLIONS OF GALAXIES IN THE UNIVERSE"
+                   Actual output:   "THERE ARE BILLIONS OF GALAXIES IN THE UNIVERSE?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 19: DECRYPT: 
+                   Input string:    "OCZO TOAIO ZUI"
+                   Code string:     "OPASZXGETLBCWMRDNYUIJVFHQK "
+                   Expected output: "ALEA IACTA EST"
+                   Actual output:   "ALEA IACTA EST?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+        Test 20: DECRYPT: 
+                   Input string:    "ZMKOSQIAIEOSPOUFKNIKUOIUORODSSVODTONMRQ KUOYRQCIE"
+                   Code string:     "RDNYKPAMIJV GESFHQUZXBCWTLO"
+                   Expected output: "THE ORIGIN OF SPECIES IS A BOOK BY CHARLES DARWIN"
+                   Actual output:   "THE ORIGIN OF SPECIES IS A BOOK BY CHARLES DARWIN?"
+                   PARTIAL SUCCESS: Output is correct
+                                    NULL terminator in the wrong place: 50% deduction
+
+

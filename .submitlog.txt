@@ -1,0 +1,24 @@
+Copying to /home/linux/ieng6/ee15wi23/turnin.dest/ee15wi23ix.PA4a
+.
+Done.
+Total bytes written: 4096
+Please check to be sure that's reasonable.
+A previously turned-in file exists.
+   previous file name:   /home/linux/ieng6/ee15wi23/turnin.dest/ee15wi23ix.PA4a
+   previous file dated:  Thu Feb 23 15:18:05 2023
+   previous file size:   4096 bytes
+Copying to /home/linux/ieng6/ee15wi23/turnin.dest/ee15wi23ix.PA4a
+....
+Done.
+Total bytes written: 7168
+Please check to be sure that's reasonable.
+Copying to /home/linux/ieng6/ee15wi23/turnin.dest/ee15wi23ix.PA4b
+...
+Done.
+Total bytes written: 9216
+Please check to be sure that's reasonable.
+Copying to /home/linux/ieng6/ee15wi23/turnin.dest/ee15wi23ix.PA4b-R
+...
+Done.
+Total bytes written: 9216
+Please check to be sure that's reasonable.

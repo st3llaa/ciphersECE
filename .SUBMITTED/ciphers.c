@@ -1,0 +1,251 @@
+#include "ciphers.h"
+#include <stdio.h>
+# include <stdlib.h>
+
+
+// Write your code here. You need to implement the following functions.
+//    char_at_index
+//    index_of_char
+//    cipher_substitution
+//    cipher_caesar
+//    cipher_enigma - the rotor codes are given below
+//		outer rotor:  "BDFHJLNPRTVXZACEGIKMOQSUWY "
+//		middle rotor: "EJOTYCHMRWAFKPUZDINSXBGLQV "
+// 		inner rotor:  "GNUAHOVBIPWCJQXDKRYELSZFMT "
+//    crack_caesar (if you decide to do the optional challenge)
+
+//precodition: no repeated letters in the input string
+char char_at_index(char input[], int shift, int index_shifted){
+	//length of input string
+	int len = 0;
+	while(input[len] != '\0'){
+		len++;
+	}
+	int actual_shift = shift% len;
+	if(shift<0){//negative shift
+		actual_shift = len + actual_shift;
+	}
+	int i;
+	char results;
+	int corr = 0;
+	for(i =0; i<= index_shifted; i++){
+		if(input[actual_shift + i+corr] == '\0'){
+			corr -=len;
+		}
+		results=input[actual_shift + i+corr];	
+	}
+	return results;
+}
+//precodition: no repeated letters in the input string
+int index_of_char(char input[], int shift, char char_find){
+	//length of input string
+	int len = 0;
+	while(input[len] != '\0'){
+		len++;
+	}
+	//origional index(pre-shifted input) of character that needs finding
+	int index_char;
+	int i;
+	for(i = 0; i <= len; i++){
+		if(input[i] == char_find){
+			index_char = i;
+		}
+	}
+	//signed new index of char_find after shift occurs
+	int new_index = index_char - shift;
+	if(new_index < 0){
+		new_index = len + new_index;
+		while(new_index < 0 && shift > 0){ // accounting for large positive shifts
+			new_index = len + new_index;
+		}
+	}
+	if(shift < 0){ //accounting for large negative shifts
+		new_index = (abs(shift)-len)+index_char;
+		while(new_index > len){
+			new_index = new_index - len;
+		}
+	}
+	return new_index;
+}
+
+
+//replaces all letters with an assigned other letter
+
+void cipher_substitution(char input[], char output[], char code[], int cipher){
+	char alphabet[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+	//lenght of input
+	int len = 0;
+	while(input[len] != '\0'){
+		len++;
+	}
+	int i;
+	//encrypting
+	if(cipher == ENCRYPT){
+		for(i = 0; i<len; i++){
+			char curr = input[i];
+			int index = index_of_char(alphabet, 0, curr);
+			output[i] = code[index];
+		}
+	}
+	//decrypting
+	if(cipher == DECRYPT){
+		for(i = 0; i<len; i++){
+			char curr = input[i];
+			int index = index_of_char(code, 0, curr);
+			output[i] = alphabet[index];
+		}
+	}
+	output[i] = '\0';
+}
+
+
+//PART 2
+void cipher_caesar(char input[], char output[], int key, int cipher){
+	char alphabet[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	//lenght of input
+	int len = 0;
+	while(input[len] != '\0'){
+		len++;
+	}	
+	int i;
+	if(cipher == ENCRYPT){
+		for(i = 0; i < len; i++){ //looping through input string
+			char curr = input[i];
+			if(curr != ' '){
+				int index = index_of_char(alphabet, -key, curr);
+				if(index < 0){
+					index = 26+index;
+				}
+				output[i] = alphabet[index];
+			}
+			else{
+				output[i] = ' ';
+			}
+		}
+	}
+	else if(cipher == DECRYPT){
+		for(i = 0; i < len; i++){
+			char curr = input[i];
+			int index = index_of_char(alphabet, key, curr);
+			output[i] = alphabet[index];
+		}
+	}
+	output[i] = '\0';
+}
+
+void cipher_enigma(char input[], char output[], int key, int cipher){
+	char outer_rotor[] = "BDFHJLNPRTVXZACEGIKMOQSUWY ";
+	char middle_rotor[] = "EJOTYCHMRWAFKPUZDINSXBGLQV ";
+	char inner_rotor[] ="GNUAHOVBIPWCJQXDKRYELSZFMT ";
+	//lenght of input
+	int len = 0;
+	while(input[len] != '\0'){
+		len++;
+	}
+	int inner_shift = key%100; //two right most digits
+	int middle_shift = key/100; //two left most digits
+	int i, index_inner, index_middle;
+	int incr = 0; //tracks when inner shift reach 27 meaning middle rotor needs to turn
+//encrypt
+	if(cipher == ENCRYPT){
+	//looping through elements in string to be encoded / decoded
+	for(i = 0; i<len; i++){
+		char curr = input[i];  
+			//printf("\nthe current i = %d \n", i);
+			//printf("\nchar: %c \n", curr);
+
+		//find curr on inner rotor
+		while(inner_shift > 27){
+			inner_shift = inner_shift % 27;
+		}
+		index_inner = index_of_char(inner_rotor, -inner_shift, curr); //index of curr in the shifted inner rotor
+			//printf("index_inner = %d\n", index_inner);
+
+		//correcting the index_char to be in correct range
+		if(index_inner < 0 && abs(index_inner)>26){ //big neg
+			while(abs(index_inner) > 26){
+				index_inner = index_inner%27;
+			}
+				//printf("updated index inner = %d\n", index_inner);
+		}
+		else if(index_inner < 0 && abs(index_inner) < 26){ //small neg
+			index_inner = 27+index_inner;
+				//printf("updated index inner = %d\n", index_inner);
+		}
+		else if(index_inner > 26){ //large pos
+			index_inner = index_inner%27;
+		}
+			
+
+		//char at index on outer
+		curr = outer_rotor[index_inner]; //found in outer rotor : CORRECT
+			//printf("curr on outer = %c \n", curr);
+
+		//index of curr on middle : CORRECT
+		//printf("middle shift: %d \n", middle_shift);
+		index_middle = index_of_char(middle_rotor, -middle_shift, curr); //index of middle rotor with shift
+			//printf("index_middle (w/ shift) = %d \n", index_middle);
+		//correcting the index_char to be in correct range
+		if(index_middle < 0 && abs(index_middle)>26){
+			while(abs(index_middle) > 26){
+				index_middle = index_middle%27;
+			}
+				//printf("updated index middle = %d\n", index_middle);
+		}
+		else if(index_middle < 0 && abs(index_middle) < 26){
+			index_middle = 27+index_middle;
+				//printf("updated index middle = %d\n", index_middle);
+		}
+		else if(index_middle > 26){ //large pos
+			index_middle = index_middle%27;
+		}
+
+		//outer at same index
+		output[i] = outer_rotor[index_middle]; //assigning result array value of middle rotor encrypted letter
+			//printf("assigning: %c to index %d in results \n", outer_rotor[index_middle], i);
+
+	//move rotors accordingly
+			//printf("SHIFT BEFORE INCREMENT: %d\n", inner_shift);
+		inner_shift = inner_shift + 1; //shifts are to the right, when using this variable must be neg
+			//printf("inner shift updated = %d \n", inner_shift);
+		incr++;
+		if(incr == 27){
+			incr = 0; //reset increment
+			middle_shift = middle_shift +1; //shifts are to the right, when using this variable must be neg
+				//printf("INCREMENT REQUIREMENT MET: new middle shift = %d, inner shift = %d", middle_shift, inner_shift);
+		}
+	}
+	output[i] = '\0';
+	}
+//decrypt
+	else if (cipher == DECRYPT){ //TODO: test decrypt
+	for(i=0; i<len; i++){
+		char curr = input[i];
+			//printf("\ncurr: %c\n", curr);
+		//find curr on outer rotor : CORRECT
+		int index_outer = index_of_char(outer_rotor, 0, curr);
+			//printf("index outer rotor: %d\n", index_outer);
+		//middle rotor character aligned with index_outer : CORRECT
+		curr = char_at_index(middle_rotor, -middle_shift, index_outer);
+			//printf("middle shift = %d, combined new middle rotor index = %d \n", middle_shift, middle_shift+index_outer);
+			//printf("curr middle rotor: %c\n", curr);
+		//find curr on outer rotor
+		index_outer = index_of_char(outer_rotor, 0, curr);
+			//printf("curr: %c, index outer: %d\n", curr, index_outer); 
+		//inner rotor character aligned with index_outer
+			//printf("shift = %d, combined new inner index = %d\n", inner_shift, index_outer+inner_shift);
+		output[i] = char_at_index(inner_rotor, -inner_shift, index_outer);
+			//printf("assigning %c to index: %d\n", output[i], i);
+	//move rotor accrodinly
+	inner_shift = inner_shift +1;
+	incr++;
+	if(incr == 27){
+		incr = 0;
+		middle_shift = middle_shift +1;
+	}
+	}
+	}
+	output[i] = '\0';
+}
+
+

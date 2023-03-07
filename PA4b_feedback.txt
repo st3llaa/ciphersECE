@@ -1,0 +1,250 @@
+*** ee15wi23ix ***
+ PA4b grading feedback:
+    cipher_caesar (2.0/40.0 pts):
+        Test  1: ENCRYPT: 
+                   Input string:    "HELLO WORLD"
+                   Key: 10 
+                   Expected output: "ROVVY GYBVN"
+                   Actual output:   ""
+                   FAILURE: Output is incorrect
+        Test  2: ENCRYPT: 
+                   Input string:    "HELLOWORLD"
+                   Key: -10 
+                   Expected output: "XUBBEMEHBT"
+                   Actual output:   "YVBBEMEHBU"
+                   FAILURE: Output is incorrect
+        Test  3: ENCRYPT: 
+                   Input string:    "THE COW JUMPED OVER THE MOOOOON"
+                   Key: 25 
+                   Expected output: "SGD BNV ITLODC NUDQ SGD LNNNNNM"
+                   Actual output:   "RFCYAMUYHSKNCBYMTCPYRFCYKMMMMML"
+                   FAILURE: Output is incorrect
+        Test  4: ENCRYPT: 
+                   Input string:    "MYNAMEISTHEALPHABET"
+                   Key: -20 
+                   Expected output: "SETGSKOYZNKGRVNGHKZ"
+                   Actual output:   "TEUHTLPZ OLHSWOHIL "
+                   FAILURE: Output is incorrect
+        Test  5: ENCRYPT: 
+                   Input string:    "CAESAR CIPHER TEST"
+                   Key: 4 
+                   Expected output: "GEIWEV GMTLIV XIWX"
+                   Actual output:   ""
+                   FAILURE: Output is incorrect
+        Test  6: ENCRYPT: 
+                   Input string:    "OVERLOAD"
+                   Key: 2 
+                   Expected output: "QXGTNQCF"
+                   Actual output:   ""
+                   FAILURE: Output is incorrect
+        Test  7: ENCRYPT: 
+                   Input string:    "GO THROUGH THE DOOR"
+                   Key: 12 
+                   Expected output: "SA FTDAGST FTQ PAAD"
+                   Actual output:   ""
+                   FAILURE: Output is incorrect
+        Test  8: ENCRYPT: 
+                   Input string:    "A FULL ROTATION TEST"
+                   Key: 26 
+                   Expected output: "A FULL ROTATION TEST"
+                   Actual output:   ""
+                   FAILURE: Output is incorrect
+        Test  9: ENCRYPT: 
+                   Input string:    "GO DADDY GO"
+                   Key: -26 
+                   Expected output: "GO DADDY GO"
+                   Actual output:   "HPAEBEEZAHP"
+                   FAILURE: Output is incorrect
+        Test 10: ENCRYPT: 
+                   Input string:    "THERE IS AN ITEM IN THE BAG OF KAREL"
+                   Key: -2 
+                   Expected output: "RFCPC GQ YL GRCK GL RFC ZYE MD IYPCJ"
+                   Actual output:   "RFCPCYGQYZLYGRCKYGLYRFCY ZEYMDYIZPCJ"
+                   FAILURE: Output is incorrect
+        Test 11: DECRYPT: 
+                   Input string:    "ROVVY GYBVN"
+                   Key: 10 
+                   Expected output: "HELLO WORLD"
+                   Actual output:   "HELLOQXOSLD"
+                   FAILURE: Output is incorrect
+        Test 12: DECRYPT: 
+                   Input string:    "XUBBEMEHBT"
+                   Key: -10 
+                   Expected output: "HELLOWORLD"
+                   Actual output:   "GD  qqq"
+                   FAILURE: Output is incorrect
+        Test 13: DECRYPT: 
+                   Input string:    "SGD BNV ITLODC NUDQ SGD LNNNNNM"
+                   Key: 25 
+                   Expected output: "THE COW JUMPED OVER THE MOOOOON"
+                   Actual output:   "UIFBDPXBKVNQFEBPWFSBUIFBNPPPPPO"
+                   FAILURE: Output is incorrect
+        Test 14: DECRYPT: 
+                   Input string:    "SETGSKOYZNKGRVNGHKZ"
+                   Key: -20 
+                   Expected output: "MYNAMEISTHEALPHABET"
+                   Actual output:   "LM"
+                   FAILURE: Output is incorrect
+        Test 15: DECRYPT: 
+                   Input string:    "GEIWEV GMTLIV XIWX"
+                   Key: 4 
+                   Expected output: "CAESAR CIPHER TEST"
+                   Actual output:   "CAESARWCIPHERWTEST"
+                   FAILURE: Output is incorrect
+        Test 16: DECRYPT: 
+                   Input string:    "QXGTNQCF"
+                   Key: 2 
+                   Expected output: "OVERLOAD"
+                   Actual output:   "OVERLOAD"
+                   SUCCESS: Output is correct
+        Test 17: DECRYPT: 
+                   Input string:    "SA FTDAGST FTQ PAAD"
+                   Key: 12 
+                   Expected output: "GO THROUGH THE DOOR"
+                   Actual output:   "GPOUHSPVGHOUHEODPPS"
+                   FAILURE: Output is incorrect
+        Test 18: DECRYPT: 
+                   Input string:    "A FULL ROTATION TEST"
+                   Key: 26 
+                   Expected output: "A FULL ROTATION TEST"
+                   Actual output:   "BAGVMMASPUBUJPOAUFTU"
+                   FAILURE: Output is incorrect
+        Test 19: DECRYPT: 
+                   Input string:    "GO DADDY GO"
+                   Key: -26 
+                   Expected output: "GO DADDY GO"
+                   Actual output:   "FNZC"
+                   FAILURE: Output is incorrect
+        Test 20: DECRYPT: 
+                   Input string:    "RFCPC GQ YL GRCK GL RFC ZYE MD IYPCJ"
+                   Key: -2 
+                   Expected output: "THERE IS AN ITEM IN THE BAG OF KAREL"
+                   Actual output:   "`"
+                   FAILURE: Output is incorrect
+
+    cipher_enigma (60.0/60.0 pts):
+        Test  1: ENCRYPT: 
+                   Input string:    "ECE CLASSES ARE THE BEST"
+                   Key: 1304 
+                   Expected output: "BRIJOWUTJTQKO XYYIKLCHEI"
+                   Actual output:   "BRIJOWUTJTQKO XYYIKLCHEI"
+                   SUCCESS: Output is correct
+        Test  2: ENCRYPT: 
+                   Input string:    "THE SAN DIEGO ZOO LOOKS NICE IN SUMMER"
+                   Key: 5050 
+                   Expected output: "OZABOWFPHNBTNJMKAXTYOCXROPCWXEKUGYKANX"
+                   Actual output:   "OZABOWFPHNBTNJMKAXTYOCXROPCWXEKUGYKANX"
+                   SUCCESS: Output is correct
+        Test  3: ENCRYPT: 
+                   Input string:    "SMALL STRING BIG ROTATION"
+                   Key: 9999 
+                   Expected output: "NALUKVHLA FFFXDTTSU UGEYA"
+                   Actual output:   "NALUKVHLA FFFXDTTSU UGEYA"
+                   SUCCESS: Output is correct
+        Test  4: ENCRYPT: 
+                   Input string:    "TEST CASE IN WHICH WE ARE TESTING THE FULL ROTATION BECAUSE THE ROTOR SHOULD BE ROTATING AFTER SOME AMOUNT OF SHIFTS"
+                   Key: 1234 
+                   Expected output: "RNKOV POYZGMWKGKYDQEMNRC AAZW YDDDDOQRKVUKVUWBWIG CMDI PPEOPP BCBDJKPXJHOHGTHZDEDHNHUSYYYBHEAKSETIVW WNGG GRSFSQUWTW"
+                   Actual output:   "RNKOV POYZGMWKGKYDQEMNRC AAZW YDDDDOQRKVUKVUWBWIG CMDI PPEOPP BCBDJKPXJHOHGTHZDEDHNHUSYYYBHEAKSETIVW WNGG GRSFSQUWTW"
+                   SUCCESS: Output is correct
+        Test  5: ENCRYPT: 
+                   Input string:    "THISTESTHASNOSPACE"
+                   Key:  203 
+                   Expected output: "KVZUYURVFFEFJBD RI"
+                   Actual output:   "KVZUYURVFFEFJBD RI"
+                   SUCCESS: Output is correct
+        Test  6: ENCRYPT: 
+                   Input string:    "CRYPTOGRAPHY TEST SIX"
+                   Key: 1136 
+                   Expected output: "ALSRJKXFALYJAAXUYERCN"
+                   Actual output:   "ALSRJKXFALYJAAXUYERCN"
+                   SUCCESS: Output is correct
+        Test  7: ENCRYPT: 
+                   Input string:    "FIND THE WORD CAESAR"
+                   Key:   12 
+                   Expected output: "RWBNBBMOPDQVETYNFCKW"
+                   Actual output:   "RWBNBBMOPDQVETYNFCKW"
+                   SUCCESS: Output is correct
+        Test  8: ENCRYPT: 
+                   Input string:    "THIS IS AN ECE CLASS"
+                   Key: 7722 
+                   Expected output: "YIMHBJEZCMWBRIJOWUTJ"
+                   Actual output:   "YIMHBJEZCMWBRIJOWUTJ"
+                   SUCCESS: Output is correct
+        Test  9: ENCRYPT: 
+                   Input string:    "GO DEEP INTO THE FOREST"
+                   Key: 1206 
+                   Expected output: "HBYQUKTBJPIJFFQSTMUZWTX"
+                   Actual output:   "HBYQUKTBJPIJFFQSTMUZWTX"
+                   SUCCESS: Output is correct
+        Test 10: ENCRYPT: 
+                   Input string:    "ZERO ROTATION TEST"
+                   Key:    0 
+                   Expected output: "MFPRNMOUOAZSVEEAYB"
+                   Actual output:   "MFPRNMOUOAZSVEEAYB"
+                   SUCCESS: Output is correct
+        Test 11: DECRYPT: 
+                   Input string:    "BRIJOWUTJTQKO XYYIKLCHEI"
+                   Key: 1304 
+                   Expected output: "ECE CLASSES ARE THE BEST"
+                   Actual output:   "ECE CLASSES ARE THE BEST"
+                   SUCCESS: Output is correct
+        Test 12: DECRYPT: 
+                   Input string:    "OZABOWFPHNBTNJMKAXTYOCXROPCWXEKUGYKANX"
+                   Key: 5050 
+                   Expected output: "THE SAN DIEGO ZOO LOOKS NICE IN SUMMER"
+                   Actual output:   "THE SAN DIEGO ZOO LOOKS NICE IN SUMMER"
+                   SUCCESS: Output is correct
+        Test 13: DECRYPT: 
+                   Input string:    "NALUKVHLA FFFXDTTSU UGEYA"
+                   Key: 9999 
+                   Expected output: "SMALL STRING BIG ROTATION"
+                   Actual output:   "SMALL STRING BIG ROTATION"
+                   SUCCESS: Output is correct
+        Test 14: DECRYPT: 
+                   Input string:    "RNKOV POYZGMWKGKYDQEMNRC AAZW YDDDDOQRKVUKVUWBWIG CMDI PPEOPP BCBDJKPXJHOHGTHZDEDHNHUSYYYBHEAKSETIVW WNGG GRSFSQUWTW"
+                   Key: 1234 
+                   Expected output: "TEST CASE IN WHICH WE ARE TESTING THE FULL ROTATION BECAUSE THE ROTOR SHOULD BE ROTATING AFTER SOME AMOUNT OF SHIFTS"
+                   Actual output:   "TEST CASE IN WHICH WE ARE TESTING THE FULL ROTATION BECAUSE THE ROTOR SHOULD BE ROTATING AFTER SOME AMOUNT OF SHIFTS"
+                   SUCCESS: Output is correct
+        Test 15: DECRYPT: 
+                   Input string:    "KVZUYURVFFEFJBD RI"
+                   Key:  203 
+                   Expected output: "THISTESTHASNOSPACE"
+                   Actual output:   "THISTESTHASNOSPACE"
+                   SUCCESS: Output is correct
+        Test 16: DECRYPT: 
+                   Input string:    "ALSRJKXFALYJAAXUYERCN"
+                   Key: 1136 
+                   Expected output: "CRYPTOGRAPHY TEST SIX"
+                   Actual output:   "CRYPTOGRAPHY TEST SIX"
+                   SUCCESS: Output is correct
+        Test 17: DECRYPT: 
+                   Input string:    "RWBNBBMOPDQVETYNFCKW"
+                   Key:   12 
+                   Expected output: "FIND THE WORD CAESAR"
+                   Actual output:   "FIND THE WORD CAESAR"
+                   SUCCESS: Output is correct
+        Test 18: DECRYPT: 
+                   Input string:    "YIMHBJEZCMWBRIJOWUTJ"
+                   Key: 7722 
+                   Expected output: "THIS IS AN ECE CLASS"
+                   Actual output:   "THIS IS AN ECE CLASS"
+                   SUCCESS: Output is correct
+        Test 19: DECRYPT: 
+                   Input string:    "HBYQUKTBJPIJFFQSTMUZWTX"
+                   Key: 1206 
+                   Expected output: "GO DEEP INTO THE FOREST"
+                   Actual output:   "GO DEEP INTO THE FOREST"
+                   SUCCESS: Output is correct
+        Test 20: DECRYPT: 
+                   Input string:    "MFPRNMOUOAZSVEEAYB"
+                   Key:    0 
+                   Expected output: "ZERO ROTATION TEST"
+                   Actual output:   "ZERO ROTATION TEST"
+                   SUCCESS: Output is correct
+
+    crack_caesar (0.0/25.0 pts):
+        Code failed to compile
+
+
